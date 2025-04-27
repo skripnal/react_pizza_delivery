@@ -1,0 +1,8 @@
+@use "./styles/fonts";
+@use "./styles/reset";
+
+*,
+*::before,
+*::after {
+  font-family: "Montserrat", sans-serif;
+}

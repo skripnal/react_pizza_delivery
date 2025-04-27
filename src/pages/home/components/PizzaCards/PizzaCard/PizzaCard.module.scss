@@ -1,0 +1,58 @@
+@use "../../../../../styles/mixins/media";
+
+.card {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: all 0.3s;
+  padding: 10px;
+  border-radius: 10px;
+
+  @include media.mobile {
+    gap: 5px;
+  }
+
+  &:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  }
+
+  img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+
+  .options {
+    background-color: #f3f3f3;
+    border-radius: 0.625rem;
+    padding: 0.375rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 0.375rem;
+
+      li {
+        padding: 0.5rem 0;
+        flex: 1;
+        border-radius: 0.3125rem;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &.active {
+          background-color: #fff;
+          box-shadow: 0 0.125rem 0.25rem #0000000a;
+        }
+
+        &:hover {
+          background-color: #ffffffb9;
+        }
+      }
+    }
+  }
+}

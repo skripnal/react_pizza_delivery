@@ -1,0 +1,32 @@
+@use "../../styles/mixins/media";
+
+.container {
+  padding: 0 3.75rem;
+
+  @include media.mobile {
+    padding: 0;
+  }
+
+  .title {
+    margin-bottom: 8px;
+    text-align: center;
+    @include media.mobile {
+      padding: 0 10px;
+      margin-bottom: 0;
+    }
+  }
+
+  .categorySort {
+    padding: 2rem 0;
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: 4fr 1fr;
+
+    @include media.mobile {
+      display: flex;
+      flex-direction: column;
+      padding: 0 10px;
+      margin: 10px 0;
+    }
+  }
+}

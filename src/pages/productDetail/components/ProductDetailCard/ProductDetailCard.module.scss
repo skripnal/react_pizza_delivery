@@ -1,0 +1,94 @@
+@use "../../../../styles/mixins/media";
+
+.wrapper {
+  padding: 10px 100px 50px;
+
+  @include media.tablet {
+    padding: 10px 50px 50px;
+  }
+
+  @include media.mobile {
+    padding: 10px 10px 50px;
+  }
+
+  & > button {
+    padding: 1rem 2rem;
+    border-radius: 1.875rem;
+    background-color: unset;
+    cursor: pointer;
+    color: #d3d3d3;
+    border: 1px solid #d3d3d3;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 20px;
+
+    & > * {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.pizza {
+  width: 100%;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+
+  @include media.tabletAndMobile {
+    grid-template-columns: 1fr;
+  }
+
+  img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+
+  .description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__top {
+      p {
+        text-align: start;
+        margin-top: 20px;
+      }
+    }
+
+    .options {
+      background-color: #f3f3f3;
+      border-radius: 0.625rem;
+      padding: 0.375rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.375rem;
+      margin: 30px 0;
+
+      ul {
+        list-style: none;
+        display: flex;
+        gap: 0.375rem;
+
+        li {
+          padding: 0.5rem 0;
+          flex: 1;
+          border-radius: 0.3125rem;
+          cursor: pointer;
+          transition: all 0.3s;
+
+          &.active {
+            background-color: #fff;
+            box-shadow: 0 0.125rem 0.25rem #0000000a;
+          }
+
+          &:hover {
+            background-color: #ffffffb9;
+          }
+        }
+      }
+    }
+  }
+}

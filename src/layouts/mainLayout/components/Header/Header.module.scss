@@ -1,0 +1,77 @@
+@use "../../../../styles/mixins/media";
+
+.header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 50px;
+  align-items: center;
+  padding: 50px 60px 30px;
+  border-bottom: 1px solid #f6f6f6;
+
+  @include media.tabletAndMobile {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  @include media.mobile {
+    padding: 10px;
+  }
+
+  .title {
+    display: flex;
+    align-items: center;
+    gap: 0.9375rem;
+    img {
+      width: 3.125rem;
+    }
+
+    div {
+      p {
+        color: #7b7b7b;
+      }
+    }
+  }
+
+  .search {
+    width: 50%;
+    min-width: 300px;
+    font-size: 24px;
+    position: relative;
+    border: 1px solid #7b7b7b;
+    border-radius: 0.625rem;
+
+    @include media.tabletAndMobile {
+      width: 100%;
+      order: 3;
+    }
+
+    .input {
+      width: 100%;
+      border: none;
+      background-color: inherit;
+      font-size: 1.125rem;
+      padding: 0.5rem 3rem 0.5rem 3rem;
+      height: 100%;
+
+      &:focus-visible {
+        outline: none;
+      }
+    }
+
+    .searchIcon {
+      position: absolute;
+      height: 100%;
+      left: 15px;
+      cursor: auto;
+      color: #7b7b7b;
+    }
+
+    .clearIcon {
+      position: absolute;
+      height: 100%;
+      right: 15px;
+      cursor: pointer;
+      color: #7b7b7b;
+    }
+  }
+}
