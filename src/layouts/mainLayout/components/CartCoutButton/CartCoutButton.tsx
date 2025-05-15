@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { TiShoppingCart } from "react-icons/ti";
 
 import styles from "./CartCoutButton.module.scss";
+import { RoutesEnum } from "../../../../enums/routing";
 
 interface Props {
   totalPrice: number;
@@ -10,7 +11,7 @@ interface Props {
 
 const CartCoutButton: React.FC<Props> = ({ totalPrice, totalCount }) => {
   return (
-    <Link to={"/cart"}>
+    <Link to={`${RoutesEnum.BASEURL}/cart`}>
       <div className={styles.cart}>
         <p>{totalPrice.toFixed(2)} $</p>
         <div className={styles.separator}></div>

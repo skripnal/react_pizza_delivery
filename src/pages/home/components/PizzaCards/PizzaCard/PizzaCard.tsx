@@ -8,6 +8,7 @@ import {
 import { Link } from "react-router-dom";
 import OrederButton from "../OrederButton/OrederButton";
 import { Pizza } from "../../../../../types/types";
+import { RoutesEnum } from "../../../../../enums/routing";
 
 interface Props {
   pizza: Pizza;
@@ -37,7 +38,7 @@ const PizzaCard: React.FC<Props> = ({ pizza }) => {
 
   return (
     <div className={styles.card}>
-      <Link to={`/pizzas/${id}`}>
+      <Link to={`${RoutesEnum.BASEURL}/pizzas/${id}`}>
         <img src={imageUrl} alt="" />
       </Link>
       <h2>{title}</h2>

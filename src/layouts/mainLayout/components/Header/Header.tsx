@@ -13,6 +13,7 @@ import {
 } from "../../../../redux/slices/cartSlice";
 import CartCoutButton from "../CartCoutButton/CartCoutButton";
 import styles from "./Header.module.scss";
+import { RoutesEnum } from "../../../../enums/routing";
 
 const Header: React.FC = () => {
   const items = useSelector(selectCartItems);
@@ -51,7 +52,7 @@ const Header: React.FC = () => {
 
   return (
     <header className={styles.header}>
-      <Link to={"/"}>
+      <Link to={RoutesEnum.BASEURL}>
         <div className={styles.title}>
           <img src={icon} alt="" />
           <div>
@@ -60,7 +61,7 @@ const Header: React.FC = () => {
           </div>
         </div>
       </Link>
-      {location.pathname === "/" ? (
+      {location.pathname === `${RoutesEnum.BASEURL}/` ? (
         <div className={styles.search}>
           <IoIosSearch
             onClick={() => inputRef.current?.focus()}
